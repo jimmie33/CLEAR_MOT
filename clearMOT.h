@@ -35,7 +35,7 @@ typedef struct MOTResult
 	int false_positive;
 	int ID_switch;
 }MOTResult;
-#define THRESH_VALIDATION 0.5
+#define THRESH_VALIDATION 1.0
 class C_Mot
 {
 	double error_sum;
@@ -136,7 +136,7 @@ class ResultParser
 	double h_ratio;
 	double w_ratio;
 public:
-	ResultParser(const char* filename,double r,double h=1.0,double w=1.0):ratio(r),h_ratio(h),w_ratio(w)
+	ResultParser(const char* filename,double r,double w=1.0,double h=1.0):ratio(r),h_ratio(h),w_ratio(w)
 	{
 		open_success=true;
 		file=xmlReadFile(filename,"UTF-8",XML_PARSE_RECOVER);
