@@ -55,7 +55,7 @@ int calMOT(const char* path=NULL)
 	ResultParser gt(GT_XML_FILE,1.0);
 	ResultParser hp(HP_XML_FILE,    1.0,                    0.9,                    1.2);//you may scale the result bounding box: w=w*r*w_r, h=h*r*h_r
 	//                              [ratio]					[width_ratio]			[height_ratio]
-	C_Mot mot;//0.5: IOU threshold     
+	C_Mot mot;//1.0: IOU threshold     
 
 	if (path==NULL)
 	{
